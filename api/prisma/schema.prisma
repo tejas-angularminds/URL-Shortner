@@ -18,13 +18,13 @@ model User {
   email    String   @unique
   userName String?
   password String
-  urls    URLS[]
+  urls    Urls[]
 }
 
-model URLS {
+model Urls {
   id           String   @id @default(uuid(7)) @unique
-  redirectURL      String   
-  shortURL     String   @unique
+  redirectUrl  String   
+  shortUrl     String   @unique
   creationDate DateTime 
   published    Boolean  @default(true)
   author       User    @relation(fields: [authorId], references: [id])
