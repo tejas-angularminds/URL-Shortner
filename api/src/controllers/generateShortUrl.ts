@@ -30,7 +30,6 @@ export const handleGenerateNewShorturl = async (req: express.Request, res: expre
         const urlExists = await prisma.urls.findFirst({
             where: {
                 longUrl :  req.body.orignalUrl,
-                authorId: req.body.userId
             }
         });
 
